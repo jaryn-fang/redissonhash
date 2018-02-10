@@ -83,4 +83,11 @@ public class App
                 | ((long)digest[0 + nTime * 4] & 0xFF);
         return rv;
     }
+
+    public static void main(String[] args) {
+        HashFunction hashFunction= Hashing.md5();
+        for(int i=0; i<10; i++) {
+            System.out.println(hash(hashFunction.hashString(i+"", Charset.forName("UTF-8")).asBytes(), 0));
+        }
+    }
 }
